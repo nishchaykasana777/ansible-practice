@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks: 
+    - name: installing http software
+      action: yum pkg=httpd state=installed

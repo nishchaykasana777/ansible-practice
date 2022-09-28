@@ -1,0 +1,13 @@
+---
+- hosts: webservers
+  become: yes
+  connection: ssh
+  user: ansible
+
+
+  tasks:
+      - name: starting httpd service
+        service:
+          name: httpd
+          state: started
+

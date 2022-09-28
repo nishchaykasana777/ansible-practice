@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: yes
+  connection: ssh
+
+  tasks: 
+    - name: installing packages
+      yum:
+        name: ['git','which','mysql','wget','docker','tree','httpd']
+        state: installed
